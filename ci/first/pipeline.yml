@@ -22,7 +22,7 @@ jobs:
       - get: resource1
         trigger: true
       - task: test
-        file: resource-tutorial/ci/first/task/hello_world.yml
+        file: resource1/ci/first/task/hello_world.yml
 #        vars:
 #          var1: "hello-word.sh"
         params:
