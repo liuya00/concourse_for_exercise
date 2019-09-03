@@ -1,2 +1,3 @@
+#!/bin/bash
 echo this is $USERNAME, password is $PASSWORD1
 echo Hello world!
