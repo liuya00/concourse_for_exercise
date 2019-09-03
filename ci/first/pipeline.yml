@@ -1,0 +1,38 @@
+groups:
+  - name: main
+    jobs:
+    - job1
+    resources:
+    - resource1
+
+resources:
+  - name: resource1
+    type: git
+    source:
+      uri: https://github.com/liuya00/concourse_for_exercise.git
+      branch: master
+
+jobs:
+  - name: job1
+    public: true
+#    serial: true
+#    serial_groups: [first]
+#    disable_manual_trigger: true
+    plan:
+      - get: resource1
+        trigger: true
+      - task: test
+        file: resource-tutorial/ci/first/task/hello_world.yml
+#        vars:
+#          var1: "hello-word.sh"
+        params:
+          USERNAME: {{username}}
+          PASSWORD1: {{password}}
+#    on_failure:
+#    on_abort:
+#    on_success:
+#    ensure:
+
+
+
+
